@@ -39,10 +39,6 @@ app.options("*", cors()); // include before other routes
 app.use(
 	cors({
 		origin: [
-			"http://localhost:3003",
-			"http://localhost:4100",
-			"http://localhost:5173",
-			"https://backend-happy-store.vercel.app",
 			"https://admin-happystore.netlify.app",
 		],
 		methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
