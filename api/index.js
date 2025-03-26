@@ -36,14 +36,22 @@ app.set("trust proxy", 1);
 app.use(express.json({ limit: "4mb" }));
 app.use(helmet());
 app.options("*", cors()); // include before other routes
-app.use(
-	cors({
-		origin: ["https://admin-happystore.netlify.app"],
-		methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-		// allowedHeaders: ["Content-Type", "Authorization"],
-		credentials: true,
-	})
-);
+const corsOptions = {
+	origin: "https://admin-happystore.netlify.app", // Your frontend URL (NO WILDCARD '*')
+	methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+	credentials: true, // Allow credentials (cookies, authorization headers)
+	allowedHeaders: ["Content-Type", "Authorization"], // Explicitly allow headers
+};
+
+app.use(cors(corsOptions));
+// app.use(
+// 	cors({
+// 		origin: ["https://admin-happystore.netlify.app"],
+// 		methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+// 		// allowedHeaders: ["Content-Type", "Authorization"],
+// 		credentials: true,
+// 	})
+// );
 
 //root route
 app.get("/", (req, res) => {
