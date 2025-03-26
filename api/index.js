@@ -38,9 +38,7 @@ app.use(helmet());
 app.options("*", cors()); // include before other routes
 app.use(
 	cors({
-		origin: [
-			"https://admin-happystore.netlify.app",
-		],
+		origin: ["https://admin-happystore.netlify.app"],
 		methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
 		allowedHeaders: ["Content-Type", "Authorization"],
 		credentials: true,
@@ -92,13 +90,7 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
 	cors: {
-		origin: [
-			"http://localhost:3000",
-			"http://localhost:4100",
-			"http://localhost:5173",
-			"https://backend-happy-store.vercel.app",
-			"https://admin-happystore.netlify.app",
-		], //add your origin here instead of this
+		origin: ["https://admin-happystore.netlify.app"], //add your origin here instead of this
 		credentials: true,
 		transports: ["websocket"],
 	},
