@@ -93,7 +93,7 @@ const io = new Server(server, {
 	cors: {
 		origin: ["https://admin-happystore.netlify.app"], //add your origin here instead of this
 		credentials: true,
-		transports: ["websocket"],
+		methods: ["GET", "POST"],
 	},
 });
 
