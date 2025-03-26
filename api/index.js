@@ -44,14 +44,7 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
-// app.use(
-// 	cors({
-// 		origin: ["https://admin-happystore.netlify.app"],
-// 		methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-// 		// allowedHeaders: ["Content-Type", "Authorization"],
-// 		credentials: true,
-// 	})
-// );
+
 
 //root route
 app.get("/", (req, res) => {
