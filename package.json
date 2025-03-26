@@ -1,5 +1,5 @@
 {
-  "name": "kachabazar-backend",
+  "name": "happyStore-backend",
   "version": "0.1.0",
   "description": "this is the server of dashter built with node, express, mongoose schema validation and use mongodb as a database",
   "main": "index.js",
@@ -12,7 +12,7 @@
     "product": "node script/product.js",
     "generate-password": "node script/script.js"
   },
-  "author": "Kachabazar",
+  "author": "happyStore",
   "license": "ISC",
   "dependencies": {
     "@paypal/checkout-server-sdk": "^1.0.3",

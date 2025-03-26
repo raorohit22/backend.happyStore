@@ -98,12 +98,7 @@ const io = new Server(server, {
 			"http://localhost:3000",
 			"http://localhost:4100",
 			"http://localhost:5173",
-			// "https://admin-kachabazar.vercel.app",
-			// "https://dashtar-admin.vercel.app",
-			// "https://kachabazar-store.vercel.app",
-			// "https://kachabazar-admin.netlify.app",
-			// "https://dashtar-admin.netlify.app",
-			// "https://kachabazar-store-nine.vercel.app",
+			"https://admin-happystore.netlify.app",
 		], //add your origin here instead of this
 		credentials: true,
 		transports: ["websocket"],
