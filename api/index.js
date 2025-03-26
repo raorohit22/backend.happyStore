@@ -42,6 +42,8 @@ app.use(
 			"http://localhost:3003",
 			"http://localhost:4100",
 			"http://localhost:5173",
+			"https://admin-happystore.netlify.app",
+			"https://backend-happy-store.vercel.app",
 		],
 		methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
 		allowedHeaders: ["Content-Type", "Authorization"],
@@ -99,6 +101,7 @@ const io = new Server(server, {
 			"http://localhost:4100",
 			"http://localhost:5173",
 			"https://admin-happystore.netlify.app",
+			"https://backend-happy-store.vercel.app",
 		], //add your origin here instead of this
 		credentials: true,
 		transports: ["websocket"],
