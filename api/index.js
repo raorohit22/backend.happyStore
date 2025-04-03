@@ -24,6 +24,7 @@ const {
 	getGlobalSetting,
 	getStoreCustomizationSetting,
 } = require("../lib/notification/setting");
+const { env } = require("process");
 
 connectDB();
 const app = express();
@@ -36,8 +37,9 @@ app.set("trust proxy", 1);
 app.use(express.json({ limit: "4mb" }));
 app.use(helmet());
 app.options("*", cors()); // include before other routes
+
 const corsOptions = {
-	origin: "https://admin-happystore.netlify.app", // Your frontend URL (NO WILDCARD '*')
+	origin: process.env.FRONTENDURL, // Your frontend URL (NO WILDCARD '*')
 	methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
 	credentials: true, // Allow credentials (cookies, authorization headers)
 	allowedHeaders: ["Content-Type", "Authorization"], // Explicitly allow headers
@@ -91,11 +93,16 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
 	cors: {
-		origin: ["https://admin-happystore.netlify.app"], //add your origin here instead of this
+		origin: process.env.FRONTENDURL, //add your origin here instead of this
 		credentials: true,
 		methods: ["GET", "POST"],
 	},
 });
+
+console.log(`Socket server running on port ${PORT}`);
+console.log(`Socket server running on port  ${process.env.FRONTENDURL}`);
+
+
 
 io.on("connection", (socket) => {
 	// console.log(`Socket ${socket.id} connected!`);
