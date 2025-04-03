@@ -36,7 +36,7 @@ app.set("trust proxy", 1);
 
 app.use(express.json({ limit: "4mb" }));
 app.use(helmet());
-app.options("*", cors()); // include before other routes
+// app.options("*", cors()); // include before other routes
 
 const corsOptions = {
 	origin: process.env.FRONTENDURL, // Your frontend URL (NO WILDCARD '*')
