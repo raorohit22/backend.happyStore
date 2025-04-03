@@ -40,7 +40,7 @@ app.options("*", cors()); // include before other routes
 
 const corsOptions = {
 	origin: process.env.FRONTENDURL, // Your frontend URL (NO WILDCARD '*')
-	methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+	// methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
 	credentials: true, // Allow credentials (cookies, authorization headers)
 	allowedHeaders: ["Content-Type", "Authorization"], // Explicitly allow headers
 };
@@ -95,7 +95,7 @@ const io = new Server(server, {
 	cors: {
 		origin: process.env.FRONTENDURL, //add your origin here instead of this
 		credentials: true,
-		methods: ["GET", "POST"],
+		// methods: ["GET", "POST"],
 	},
 });
 
